@@ -7,4 +7,5 @@ resources :articles
 
 
   root to: 'static#index'
+  get '/about', to: 'static#about', as: "about"
 end
