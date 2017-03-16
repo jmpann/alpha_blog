@@ -1,0 +1,23 @@
+<% if @post.errors.any? %>
+  <h3> The following errors prevented the post from being created: </h3>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%=msg%></li>
+      <%end%>
+    </ul>
+<%end%>
+
+
+<%= form_for @post, url: {action: "create"}, html: {class: "post_creation"}  do |f| %>
+  <p>
+    <%= f.label :title %></br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %></br>
+    <%= f.text_area :description, size: "60x12" %>
+  </p>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<p><%=link_to "Back to Posts List", posts_path%> </p>

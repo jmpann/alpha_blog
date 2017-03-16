@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170314153448) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "Posts", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
     t.datetime "created_at",  null: false

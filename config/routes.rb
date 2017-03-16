@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-resources :articles
-  # get 'articles/new', to: 'articles#new', as: "new_article"
-  # post 'articles', to: 'articles#create'
-  # get 'articles/:id', to: 'articles#show', as: "article"
+resources :posts
+  # get 'posts/new', to: 'posts#new', as: "new_post"
+  # post 'posts', to: 'posts#create'
+  # get 'posts/:id', to: 'posts#show', as: "post"
 
 
   root to: 'static#index'
