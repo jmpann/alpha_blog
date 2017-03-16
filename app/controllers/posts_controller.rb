@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  before_filter :authorize
   before_action :set_current_post, only: [:edit, :update, :show, :destroy]
 
   def index
