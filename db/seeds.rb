@@ -1,6 +1,6 @@
-User.create(username: "jmpann", email: "test@test.com", password: 123456)
-User.create(username: "bdsmith", email: "test2@test.com", password: 123456)
-User.create(username: "test", email: "test3@test.com", password: 123456)
+User.create(username: "jmpann", first_name: "josh", last_name: "pann", email: "test@test.com", password: "123456")
+User.create(username: "bdsmith", first_name: "bob", last_name: "smith", email: "test2@test.com", password: "123456")
+User.create(username: "test", first_name: "test", last_name: "test", email: "test3@test.com", password: "123456")
 
 Post.create(title: "Lorem ipsum dolor sit amet.", description: "s malesuada posuere. Fusce ultrices massa a libero dapibus, nec volutpat orci posuere.", user_id: 1 )
 Post.create(title: "consectetur adipiscing elit", description: " rhoncus vitae id justo. Nunc cursus imperdiet es", user_id: 1)

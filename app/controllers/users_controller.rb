@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+before_action :current_user, only: [:edit, :update, :show, :destroy]
+
   def new
     @user = User.new
   end
@@ -15,9 +17,19 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = current_user.posts
   end
 
   def edit
+  end
+
+  def update
+  end
+
+  def index
+  end
+
+  def destroy
   end
 
   private
