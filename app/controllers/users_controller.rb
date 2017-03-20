@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-before_action :current_user, only: [:edit, :update, :show, :destroy]
+before_action :set_current_user, only: [:edit, :update, :show, :destroy]
 
   def new
     @user = User.new
@@ -9,10 +9,11 @@ before_action :current_user, only: [:edit, :update, :show, :destroy]
   def create
     user = User.new(user_params)
     if user.save
+      flash[:success] = "Welcome to the Thoughful Blog #{@user.first_name}"
       session[:user_id] = user.id
       redirect_to user_url(user)
     else
-      redirect_to new_user_path
+      redirect_to sign_up_path
     end
   end
 
@@ -24,9 +25,16 @@ before_action :current_user, only: [:edit, :update, :show, :destroy]
   end
 
   def update
+    if @user.update(user_params)
+      flash[:success] = "Your information was successfully updated"
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def index
+    @users = User.all
   end
 
   def destroy
@@ -34,8 +42,12 @@ before_action :current_user, only: [:edit, :update, :show, :destroy]
 
   private
 
+  def set_current_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :password_confirmation)
   end
 
 end
