@@ -8,3 +8,11 @@ Post.create(title: "Vestibulum rhoncus ullamcorper", description: "s. Nam luctus
 Post.create(title: "Etiam non rutrum felis", description: "us tincidunt ullamcorper. Integer vitae dui pellentesque,", user_id: 2 )
 Post.create(title: "Vestibulum et euismod urna", description: "quam vitae condimentum. Praesent elit mi, imperdiet venenatis egestas eu", user_id: 2 )
 Post.create(title: "Etiam eros nisi", description: "endrerit vitae sapien at, consequat imperdiet enim.", user_id: 2 )
+
+Category.create(name: "food")
+Category.create(name: "tv")
+Category.create(name: "music")
+Category.create(name: "outdoors")
+Category.create(name: "education")
+Category.create(name: "art")
+Category.create(name: "movies")
