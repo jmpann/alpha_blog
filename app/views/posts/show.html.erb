@@ -6,8 +6,8 @@
     <%= simple_format(@post.description) %>
   </br>
   <p>Written by: <%= @post.user.first_name%></p>
-  <% @post.categories.each do |category| %>
-    <li><%= category.name %></li>
+    <% if @post.categories.any? %>
+      <p>Categories: <%= render @post.categories %></p>
     <% end %>
     <div class="post-actions">
       <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-xs btn-primary" %>
