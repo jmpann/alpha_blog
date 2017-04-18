@@ -10,7 +10,7 @@ before_action :set_current_user, only: [:edit, :update, :destroy]
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Thoughful Blog #{@user.first_name}"
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       redirect_to user_url(@user)
     else
       redirect_to sign_up_path
